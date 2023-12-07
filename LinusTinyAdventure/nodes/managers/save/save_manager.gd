@@ -13,8 +13,6 @@ func _ready():
 		SaveManager.new_game()
 		return
 
-	print(SaveManager.current_savestate)
-
 # Create a new savestate
 func new_game() -> Dictionary: 
 	
@@ -56,7 +54,7 @@ func load_game() -> Dictionary:
 	else:
 		## Load error scene
 		print("JSON Parse Error: ", json.get_error_message(), " in ", save_game_file, " at line ", json.get_error_line())
-		SignalDatabase.scene_change_requested.emit(Constants.ERROR)
+		SignalDatabase.scene_change_requested.emit(Constants.ERROR_SCENE_NAME)
 	
 	return {}
 

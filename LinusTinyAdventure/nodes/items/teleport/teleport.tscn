@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cm3ee054oenob"]
 
-[ext_resource type="Texture2D" uid="uid://bdy6xapvlq3ki" path="res://sprites/items/Teleport.png" id="1_40jei"]
-[ext_resource type="Script" path="res://scripts/items/teleport.gd" id="1_ah1vq"]
+[ext_resource type="Texture2D" uid="uid://bdy6xapvlq3ki" path="res://sprites/items/teleport.png" id="1_40jei"]
+[ext_resource type="Script" path="res://nodes/items/teleport/teleport.gd" id="1_ah1vq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n21ia"]
 size = Vector2(16, 16)

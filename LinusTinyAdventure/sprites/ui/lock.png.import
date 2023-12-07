@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be67nysv7h7ka"
-path="res://.godot/imported/Laser.png-e43fda99dd9f901bcbcdbeaec393b84c.ctex"
+uid="uid://c6yxo67wv0sbr"
+path="res://.godot/imported/lock.png-326cf7070ce4fff933fa545ed9a61062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/Laser.png"
-dest_files=["res://.godot/imported/Laser.png-e43fda99dd9f901bcbcdbeaec393b84c.ctex"]
+source_file="res://sprites/ui/lock.png"
+dest_files=["res://.godot/imported/lock.png-326cf7070ce4fff933fa545ed9a61062.ctex"]
 
 [params]
 

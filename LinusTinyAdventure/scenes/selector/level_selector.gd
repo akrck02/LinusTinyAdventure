@@ -13,7 +13,7 @@ func _ready():
 	var i = 0
 	for level in levels:
 		
-		var button = levelButtonPrototype.instantiate();
+		var button : LevelButton = levelButtonPrototype.instantiate();
 		button.text = String("%d" % level.number);
 		button.set_meta("level_name",level.name)
 		button.set_meta("level_number",level.number)
@@ -26,7 +26,7 @@ func _ready():
 		
 		if i < LevelManager.max_level.number:
 			button.unblock()
-			button.rotate(randf_range(-10,10))
+			button.rotate(randi_range(-10,10))
 		else:
 			button.block()
 		

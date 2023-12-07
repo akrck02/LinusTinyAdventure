@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://fuonhi3pq7t4"]
+[gd_scene load_steps=15 format=3 uid="uid://fuonhi3pq7t4"]
 
-[ext_resource type="Script" path="res://scenes/levels/Level3.gd" id="1_4na57"]
+[ext_resource type="Script" path="res://scenes/levels/level_3.gd" id="1_4na57"]
 [ext_resource type="PackedScene" uid="uid://c8eanhf6fduj5" path="res://nodes/characters/player/player.tscn" id="2_3aytu"]
 [ext_resource type="PackedScene" uid="uid://cdfc2efr3t8wa" path="res://nodes/ui/ui.tscn" id="3_c1m0n"]
-[ext_resource type="PackedScene" uid="uid://bisctldckwds" path="res://nodes/ui/options.tscn" id="4_wshgl"]
+[ext_resource type="PackedScene" uid="uid://c1jtmgfe1qjly" path="res://nodes/items/camera/custom_camera.tscn" id="3_vfkin"]
+[ext_resource type="PackedScene" uid="uid://bisctldckwds" path="res://nodes/ui/options/options.tscn" id="4_wshgl"]
 [ext_resource type="TileSet" uid="uid://bfyqs7dr2cap0" path="res://materials/tilesets/city.tres" id="5_exk7i"]
 [ext_resource type="PackedScene" uid="uid://d10jtsiykf4da" path="res://nodes/items/box/box.tscn" id="6_ae3sq"]
 [ext_resource type="PackedScene" uid="uid://c6ywcuu1ss53v" path="res://nodes/items/key/key.tscn" id="7_ldftk"]
@@ -12,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cm3ee054oenob" path="res://nodes/items/teleport/teleport.tscn" id="10_a32xx"]
 [ext_resource type="PackedScene" uid="uid://chml1iia47al6" path="res://nodes/items/button/button.tscn" id="11_x6yw7"]
 [ext_resource type="PackedScene" uid="uid://btf1v8qliqi3g" path="res://nodes/items/radio/radio.tscn" id="12_i6iiu"]
-[ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="13_sel7m"]
+[ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="14_ku3fl"]
 
 [node name="Level3" type="Node2D"]
 position = Vector2(80, -224)
@@ -20,11 +21,19 @@ script = ExtResource("1_4na57")
 
 [node name="Player" parent="." instance=ExtResource("2_3aytu")]
 z_index = 1
-position = Vector2(192, 80)
+position = Vector2(64, 64)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 position = Vector2(-144, -64)
 offset = Vector2(164, 88)
+enabled = false
+zoom = Vector2(2.7, 2.7)
+position_smoothing_enabled = true
+
+[node name="custom_camera" parent="Player" instance=ExtResource("3_vfkin")]
+position = Vector2(8, 9)
+anchor_mode = 1
 zoom = Vector2(2.7, 2.7)
 position_smoothing_enabled = true
 
@@ -45,13 +54,24 @@ position = Vector2(160, 80)
 position = Vector2(224, 0)
 
 [node name="Box2" parent="." instance=ExtResource("6_ae3sq")]
-position = Vector2(64, 144)
+position = Vector2(48, 64)
 
 [node name="Key" parent="." instance=ExtResource("7_ldftk")]
 position = Vector2(224, 80)
 
 [node name="Door" parent="." instance=ExtResource("8_q7pbr")]
 position = Vector2(416, 48)
+
+[node name="Buttons" type="Node2D" parent="."]
+z_index = -1
+
+[node name="StartLaserButton" parent="Buttons" instance=ExtResource("11_x6yw7")]
+modulate = Color(0.917647, 1, 1, 1)
+position = Vector2(240, 0)
+
+[node name="EndLaserButton" parent="Buttons" instance=ExtResource("11_x6yw7")]
+modulate = Color(0.917647, 1, 1, 1)
+position = Vector2(128, 0)
 
 [node name="Lasers" type="Node" parent="."]
 
@@ -98,16 +118,6 @@ pair = NodePath("../Teleport3")
 position = Vector2(32, 144)
 pair = NodePath("../Teleport")
 
-[node name="Buttons" type="Node2D" parent="."]
-
-[node name="StartLaserButton" parent="Buttons" instance=ExtResource("11_x6yw7")]
-modulate = Color(0.917647, 1, 1, 1)
-position = Vector2(240, 0)
-
-[node name="EndLaserButton" parent="Buttons" instance=ExtResource("11_x6yw7")]
-modulate = Color(0.917647, 1, 1, 1)
-position = Vector2(128, 0)
-
 [node name="Radio" parent="." instance=ExtResource("12_i6iiu")]
 position = Vector2(288, 48)
-currentSong = ExtResource("13_sel7m")
+current_song = ExtResource("14_ku3fl")

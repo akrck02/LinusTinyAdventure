@@ -36,9 +36,9 @@ func _ready():
 	Buttons.insert(OPTION_BUTTONS.SOUND, SoundButton)
 	set_buttons();
 
-func show_self(show:bool = true):
+func show_self(is_showing:bool = true):
 	
-	if show:
+	if is_showing:
 		SignalDatabase.world_stopped.emit()
 		self.show()
 		Buttons[0].grab_focus()
@@ -62,7 +62,7 @@ func set_buttons():
 	Buttons[OPTION_BUTTONS.CONTROLS].pressed.connect(on_controls_click)
 	
 func on_level_click():
-	SignalDatabase.scene_change_requested.emit(Constants.SELECTOR)
+	SignalDatabase.scene_change_requested.emit(Constants.SELECTOR_SCENE_PATH)
 	
 func on_sound_click():
 	hide_main();

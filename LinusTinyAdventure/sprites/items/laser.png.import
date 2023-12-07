@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drysb058or8cj"
-path="res://.godot/imported/Linu’s tiny adventure.png-e9f7842bdb58be5706048638f0a2b9bf.ctex"
+uid="uid://be67nysv7h7ka"
+path="res://.godot/imported/laser.png-e8cae1ed6de6c698dcd20b783c54ea0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/background/Linu’s tiny adventure.png"
-dest_files=["res://.godot/imported/Linu’s tiny adventure.png-e9f7842bdb58be5706048638f0a2b9bf.ctex"]
+source_file="res://sprites/items/laser.png"
+dest_files=["res://.godot/imported/laser.png-e8cae1ed6de6c698dcd20b783c54ea0c.ctex"]
 
 [params]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk8s02pfn4lnq"]
+
+[ext_resource type="PackedScene" uid="uid://c1jtmgfe1qjly" path="res://nodes/items/camera/custom_camera.tscn" id="1_qyjag"]
+[ext_resource type="Texture2D" uid="uid://bcwvv3fevkqb8" path="res://icon.svg" id="2_fi82f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="custom_camera" parent="." instance=ExtResource("1_qyjag")]
+position_smoothing_enabled = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(640, 368)
+texture = ExtResource("2_fi82f")

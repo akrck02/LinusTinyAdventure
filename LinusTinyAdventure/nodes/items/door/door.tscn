@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl6084o55t5d0"]
 
 [ext_resource type="Script" path="res://nodes/items/door/door.gd" id="1_7qtb0"]
-[ext_resource type="Texture2D" uid="uid://dn3ig218g6smd" path="res://sprites/items/Door.png" id="1_xancj"]
+[ext_resource type="Texture2D" uid="uid://dn3ig218g6smd" path="res://sprites/items/door.png" id="1_xancj"]
 [ext_resource type="AudioStream" uid="uid://cs5cdvwfxbvhd" path="res://sounds/effects/door open.mp3" id="3_psrx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eqti"]

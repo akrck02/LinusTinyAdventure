@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bjf25rcjkkxlh" path="res://fonts/DotGothic16-Regular.ttf" id="1_h0f52"]
 [ext_resource type="StyleBox" uid="uid://dnv6mar7lxn38" path="res://materials/options/option_button.tres" id="2_vmqrq"]
 [ext_resource type="StyleBox" uid="uid://cgjm7qs4ijppb" path="res://materials/options/option_button_press.tres" id="3_idxcl"]
-[ext_resource type="Script" path="res://scripts/ui/optionButton.gd" id="4_7tjmb"]
+[ext_resource type="Script" path="res://nodes/ui/options/buttons/option_button.gd" id="4_7tjmb"]
 [ext_resource type="Texture2D" uid="uid://csaw28lgm3ihr" path="res://sprites/ui/option_keyboard_f5.png" id="5_g1yjj"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="6_wus8p"]
 

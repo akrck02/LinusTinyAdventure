@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://du1euggg8754i"]
 
-[ext_resource type="Script" path="res://scenes/levels/Level1.gd" id="1_xxtlx"]
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_xxtlx"]
 [ext_resource type="PackedScene" uid="uid://c8eanhf6fduj5" path="res://nodes/characters/player/player.tscn" id="2_m4abo"]
 [ext_resource type="TileSet" uid="uid://bfyqs7dr2cap0" path="res://materials/tilesets/city.tres" id="3_ttunt"]
 [ext_resource type="PackedScene" uid="uid://d10jtsiykf4da" path="res://nodes/items/box/box.tscn" id="4_yolq1"]
@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c6ywcuu1ss53v" path="res://nodes/items/key/key.tscn" id="6_eniy1"]
 [ext_resource type="PackedScene" uid="uid://bl6084o55t5d0" path="res://nodes/items/door/door.tscn" id="7_nhk5d"]
 [ext_resource type="PackedScene" uid="uid://cdfc2efr3t8wa" path="res://nodes/ui/ui.tscn" id="8_g5o7r"]
-[ext_resource type="PackedScene" uid="uid://bisctldckwds" path="res://nodes/ui/options.tscn" id="9_rno7n"]
+[ext_resource type="PackedScene" uid="uid://bisctldckwds" path="res://nodes/ui/options/options.tscn" id="9_rno7n"]
 [ext_resource type="PackedScene" uid="uid://b3icbmcj8n8m" path="res://nodes/items/heart/heart.tscn" id="10_y8vxp"]
 [ext_resource type="PackedScene" uid="uid://btf1v8qliqi3g" path="res://nodes/items/radio/radio.tscn" id="11_cxfku"]
-[ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="12_4cnjh"]
+[ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="12_2mqub"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(80, -224)
@@ -64,4 +64,4 @@ next_level = 2
 
 [node name="Radio" parent="." instance=ExtResource("11_cxfku")]
 position = Vector2(48, 144)
-currentSong = ExtResource("12_4cnjh")
+current_song = ExtResource("12_2mqub")

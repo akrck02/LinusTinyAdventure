@@ -30,7 +30,7 @@ func load_options() -> Dictionary:
 	else:
 		## Load error scene
 		print("JSON Parse Error: ", json.get_error_message(), " in ", save_game_file, " at line ", json.get_error_line())
-		EngineUtils.load_scene(self,Constants.ERROR)
+		EngineUtils.load_scene(self,Constants.ERROR_SCENE_NAME)
 	
 	return current_options;
 
@@ -89,6 +89,7 @@ func getEffectsVolume() -> float:
 	return float(current_options.get("audio")["effects"])
 	
 func change_effects_volume(value : float): 
+	
 	var busId = AudioServer.get_bus_index(Constants.AUDIO_EFFECTS_BUS);
 	var isUpdate = float(current_options.get("audio")["effects"]) != value;
 	

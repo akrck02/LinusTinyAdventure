@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bos5lbgv4kix6"]
 
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="1_4thxy"]
-[ext_resource type="Script" path="res://nodes/ui/options/levelbutton.gd" id="2_br0ig"]
+[ext_resource type="Script" path="res://nodes/ui/levels/level_button.gd" id="2_br0ig"]
 [ext_resource type="StyleBox" uid="uid://luj40nh4386d" path="res://materials/Selector/level_button_hover.tres" id="2_l0jo1"]
 [ext_resource type="Texture2D" uid="uid://c6yxo67wv0sbr" path="res://sprites/ui/Lock.png" id="4_dn785"]
 

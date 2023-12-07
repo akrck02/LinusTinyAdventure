@@ -1,5 +1,5 @@
-class_name LevelButton
 extends Button
+class_name LevelButton
 
 const LEVEL_NUMBER_METADATA = "level_number"
 const LEVEL_TEMPLATE = "levels/{number}-{name}.tscn"
@@ -9,7 +9,7 @@ const LEVEL_TEMPLATE = "levels/{number}-{name}.tscn"
 @onready var lockNode : Node2D = $Block/Lock
 
 func _on_focus_entered():
-	Input.start_joy_vibration(0,.1,0.2,0.25)
+	VibrationManager.vibrate(VibrationManager.SHORT_WEAK,VibrationManager.SHORT_STRONG)
 	SignalDatabase.button_level_focus.emit(self)
 	
 func _on_pressed():

@@ -2,20 +2,21 @@ class_name Player
 extends CharacterBody2D
 
 # UI 
-@onready var Animator : AnimationPlayer = $AnimationPlayer
 @onready var Sprite : Sprite2D = $Sprite2D
-const TILE_SIZE = 16
 
 # Interaction
 @onready var ray : RayCast2D = $RayCast2D
 @onready var tween : Tween
 var moving = false
 
-# step count
+# Step count
 var steps = 0;
 
-func _ready():
-	Animator.play("idle")
+# Movement
+@onready var block_sound : AudioStreamPlayer2D = $BlockSound
+@onready var teleport_sound : AudioStreamPlayer2D = $TeleportSound
+const PLAY_MOVE_SOUND_METHOD_NAME : String = "play_move_sound" 
+const MOVEMENT_TWEEN_SPEED : float = 1.00/3.5;
 
 # Input handleawait tween.finished
 func _process(_delta):
@@ -51,7 +52,7 @@ func _process(_delta):
 func move(dir):
 	
 	moving = true
-	var new_position = dir * TILE_SIZE
+	var new_position = dir * Constants.TILE_SIZE
 	ray.target_position = new_position
 	ray.force_raycast_update()
 		
@@ -61,18 +62,18 @@ func move(dir):
 		if collider.is_in_group(Groups.MOVABLE) and await collider.move(dir):
 			step()
 			tween = create_tween()
-			tween.tween_property(self,"position",position + new_position, 1.00/3.5).set_trans(Tween.TRANS_SINE)
-			Input.start_joy_vibration(0,.1,0.2,0.25)
+			tween.tween_property(self, NodeExtensor.POSITION_PROPERTIES,position + new_position, MOVEMENT_TWEEN_SPEED).set_trans(Tween.TRANS_SINE)
+			VibrationManager.vibrate()
 			
-			if collider.has_method("playMoveSound"):
-				collider.playMoveSound();
+			if collider.has_method(PLAY_MOVE_SOUND_METHOD_NAME):
+				collider.play_move_sound();
 			
 			await tween.finished
 			tween.kill()
 	else: 
 		step()
 		tween = create_tween()
-		tween.tween_property(self,"position",position + new_position, 1.00/3.5).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(self, NodeExtensor.POSITION_PROPERTIES, position + new_position, MOVEMENT_TWEEN_SPEED).set_trans(Tween.TRANS_SINE)
 		await tween.finished
 		tween.kill()
 		
@@ -89,13 +90,17 @@ func teleport(new_position : Vector2, collider : Node2D, dir : Vector2):
 	await tween.finished
 	
 	if collider == null:
+		teleport_sound.play()
 		position = new_position
 		return
 	
 	if collider.is_in_group(Groups.MOVABLE) and await collider.move(dir):
 		step()
-		Input.start_joy_vibration(0,.1,0.2,0.25)
+		teleport_sound.play()
+		VibrationManager.vibrate()
 		position = new_position
 		return
 	
-	
+	block_sound.play()
+	VibrationManager.vibrate()
+	SignalDatabase.camera_shake.emit()

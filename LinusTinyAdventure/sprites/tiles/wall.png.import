@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs0tkqw62ka8f"
-path="res://.godot/imported/Beam.png-0834ba17149b3496c1af3aa6cc91b91d.ctex"
+uid="uid://yviiwie7kq23"
+path="res://.godot/imported/wall.png-135b14b4c6b1a004e1c010d9d50af082.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/Beam.png"
-dest_files=["res://.godot/imported/Beam.png-0834ba17149b3496c1af3aa6cc91b91d.ctex"]
+source_file="res://sprites/tiles/wall.png"
+dest_files=["res://.godot/imported/wall.png-135b14b4c6b1a004e1c010d9d50af082.ctex"]
 
 [params]
 

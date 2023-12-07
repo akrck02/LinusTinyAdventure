@@ -15,7 +15,6 @@ var max_level : Level;
 
 var loading_packed_scene : PackedScene; 
 
-
 # Connect the signals to the respective functions
 func _ready():
 	levels = list_levels(Constants.LEVELS_PATH)
@@ -27,7 +26,7 @@ func _ready():
 	SignalDatabase.world_stopped.connect(stop_world)
 	SignalDatabase.world_restarted.connect(restart_world)
 	SignalDatabase.teleport_requested.connect(teleport)
-	loading_packed_scene = preload(Constants.SCENE_PATH + Constants.LOADER)
+	loading_packed_scene = preload(Constants.LOADER_PATH)
 
 # Load saved data into level manager
 func load_saved_data():
@@ -132,6 +131,7 @@ func list_levels(path) -> Array:
 				continue
 			
 			if file_name.contains(".gd"):
+				file_name = dir.get_next()
 				continue
 
 			levelnames.append(file_name)
@@ -172,7 +172,6 @@ func load_scene_with_transition(next_scene_path : String):
 	var canvas = get_tree().get_root().get_node("/root/Canvas")
 	var current_scenes = canvas.get_children()
 	for past_scene in current_scenes:
-		print("%s" % past_scene)
 		past_scene.queue_free()
 	
 	# add loading scene to the root
@@ -211,7 +210,6 @@ func load_scene(next_scene_path : String):
 	var canvas = get_tree().get_root().get_node("/root/Canvas")
 	var current_scenes = canvas.get_children()
 	for past_scene in current_scenes:
-		print("%s" % past_scene)
 		past_scene.queue_free()
 		
 	# find the targeted scene

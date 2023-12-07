@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvtx2c1ekdn5x"]
 
-[ext_resource type="Texture2D" uid="uid://drysb058or8cj" path="res://sprites/background/Linu’s tiny adventure.png" id="1_5goyq"]
-[ext_resource type="Script" path="res://scripts/scenes/Main.gd" id="1_8o6y1"]
+[ext_resource type="Texture2D" uid="uid://drysb058or8cj" path="res://sprites/background/logo.png" id="1_5goyq"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_8o6y1"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="3_8sbms"]
 
 [node name="MainMenu" type="Node2D"]

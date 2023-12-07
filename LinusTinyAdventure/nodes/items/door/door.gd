@@ -6,8 +6,8 @@ extends CharacterBody2D
 func _ready():
 	animator.play("idle")
 	
-func playOpenSound():
+func play_open_sound():
 	openSound.play()
 
 func defeat():
-	playOpenSound()
+	play_open_sound()

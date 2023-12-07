@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://btf1v8qliqi3g"]
 
 [ext_resource type="Script" path="res://nodes/items/radio/radio.gd" id="1_aveuo"]
-[ext_resource type="Texture2D" uid="uid://dfdunja50mjin" path="res://sprites/items/Radio.png" id="1_s8rqu"]
+[ext_resource type="Texture2D" uid="uid://dfdunja50mjin" path="res://sprites/items/radio.png" id="1_s8rqu"]
 
 [sub_resource type="Animation" id="Animation_ng256"]
 length = 0.001

@@ -9,16 +9,22 @@ const TILE_SIZE = 16
 @export var blocked : bool = false
 @export_range(0,10) var speed : int = 4;
 
+@onready var block_sound : AudioStreamPlayer2D = $BlockSound
+@onready var teleport_sound : AudioStreamPlayer2D = $TeleportSound
+
 var tween : Tween
 
 # Teleport the item 
 func teleport(new_position : Vector2, collider : Node2D, _dir : Vector2):
 		
 	if collider != null: 
+		block_sound.play()
+		SignalDatabase.camera_shake.emit()
 		return
 		
 	await tween.finished
 	parent.position = new_position
+	teleport_sound.play()
 
 # Move thw item
 func move(dir : Vector2): 
@@ -38,6 +44,7 @@ func move(dir : Vector2):
 		await tween.finished
 		tween.kill()
 		moving = false
+		
 		return true
 	
 	var collider = ray.get_collider()
@@ -46,7 +53,6 @@ func move(dir : Vector2):
 		collider.defeat()
 		collider.queue_free()
 		
-	
 		if parent.consumable:
 			tween.stop()
 			tween.kill()
@@ -59,6 +65,8 @@ func move(dir : Vector2):
 		await tween.finished
 		tween.kill()
 		moving = false
+		
 		return true
 	
+	block_sound.play()
 	return false

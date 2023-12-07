@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://efpyknmk12ym"]
 
 [ext_resource type="Script" path="res://nodes/items/laser/laser.gd" id="1_84lty"]
-[ext_resource type="Texture2D" uid="uid://cs0tkqw62ka8f" path="res://sprites/items/Beam.png" id="1_pep56"]
+[ext_resource type="Texture2D" uid="uid://cs0tkqw62ka8f" path="res://sprites/items/beam.png" id="1_pep56"]
 [ext_resource type="Texture2D" uid="uid://be67nysv7h7ka" path="res://sprites/items/Laser.png" id="1_u15o5"]
 
 [sub_resource type="Gradient" id="Gradient_2foen"]

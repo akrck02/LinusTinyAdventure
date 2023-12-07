@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfdunja50mjin"
-path="res://.godot/imported/Radio.png-b6cb18e1fde8af2cbb494a40e76b2bb2.ctex"
+uid="uid://bdy6xapvlq3ki"
+path="res://.godot/imported/teleport.png-40fe74461ab8a164c57712899a376826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/Radio.png"
-dest_files=["res://.godot/imported/Radio.png-b6cb18e1fde8af2cbb494a40e76b2bb2.ctex"]
+source_file="res://sprites/items/teleport.png"
+dest_files=["res://.godot/imported/teleport.png-40fe74461ab8a164c57712899a376826.ctex"]
 
 [params]
 

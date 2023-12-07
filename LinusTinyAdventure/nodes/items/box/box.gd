@@ -24,5 +24,5 @@ func block():
 func teleport(new_position : Vector2, collider : Node2D, dir : Vector2):
 	movement.teleport(new_position,collider,dir);
 
-func playMoveSound():
+func play_move_sound():
 	moveSound.play()

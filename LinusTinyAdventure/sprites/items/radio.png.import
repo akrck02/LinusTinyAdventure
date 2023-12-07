@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6yxo67wv0sbr"
-path="res://.godot/imported/Lock.png-beb0da31febd7e4e83a02cd0a4a64fc0.ctex"
+uid="uid://dfdunja50mjin"
+path="res://.godot/imported/radio.png-f6c000b814223770f24069b21a941664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui/Lock.png"
-dest_files=["res://.godot/imported/Lock.png-beb0da31febd7e4e83a02cd0a4a64fc0.ctex"]
+source_file="res://sprites/items/radio.png"
+dest_files=["res://.godot/imported/radio.png-f6c000b814223770f24069b21a941664.ctex"]
 
 [params]
 

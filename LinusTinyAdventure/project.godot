@@ -21,13 +21,13 @@ SignalDatabase="*res://shared/signal_database.gd"
 LevelManager="*res://nodes/managers/levels/level_manager.gd"
 OptionsManager="*res://nodes/managers/options/options_manager.gd"
 SaveManager="*res://nodes/managers/save/save_manager.gd"
+VibrationManager="*res://nodes/managers/vibration/vibration_manager.gd"
 Canvas="*res://nodes/managers/canvas/canvas.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=2
 
@@ -94,5 +94,6 @@ ui_start={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+anti_aliasing/screen_space_roughness_limiter/enabled=false
 environment/defaults/default_clear_color=Color(0.709804, 0.823529, 0.772549, 1)
 anti_aliasing/quality/use_taa=true
