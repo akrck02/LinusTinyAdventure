@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl6084o55t5d0"]
+
+[ext_resource type="Script" path="res://nodes/items/door/door.gd" id="1_7qtb0"]
+[ext_resource type="Texture2D" uid="uid://dn3ig218g6smd" path="res://sprites/items/Door.png" id="1_xancj"]
+[ext_resource type="AudioStream" uid="uid://cs5cdvwfxbvhd" path="res://sounds/effects/door open.mp3" id="3_psrx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eqti"]
+size = Vector2(14, 15)
+
+[sub_resource type="Animation" id="Animation_lcxi5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tu40r"]
+resource_name = "idle"
+length = 2.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62h58"]
+_data = {
+"RESET": SubResource("Animation_lcxi5"),
+"idle": SubResource("Animation_tu40r")
+}
+
+[node name="Door" type="CharacterBody2D" groups=["door"]]
+script = ExtResource("1_7qtb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xancj")
+centered = false
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_2eqti")
+debug_color = Color(0, 0.188235, 0.227451, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62h58")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_psrx0")
+bus = &"Effects"

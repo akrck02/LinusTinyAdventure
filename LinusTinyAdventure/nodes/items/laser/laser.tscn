@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://efpyknmk12ym"]
+
+[ext_resource type="Script" path="res://nodes/items/laser/laser.gd" id="1_84lty"]
+[ext_resource type="Texture2D" uid="uid://cs0tkqw62ka8f" path="res://sprites/items/Beam.png" id="1_pep56"]
+[ext_resource type="Texture2D" uid="uid://be67nysv7h7ka" path="res://sprites/items/Laser.png" id="1_u15o5"]
+
+[sub_resource type="Gradient" id="Gradient_2foen"]
+colors = PackedColorArray(0.686275, 0.188235, 0.207843, 1, 0.87451, 0.294118, 0.305882, 1)
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_84lty")
+
+[node name="Beam" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_pep56")
+centered = false
+hframes = 3
+
+[node name="Laser" type="Sprite2D" parent="."]
+texture = ExtResource("1_u15o5")
+centered = false
+hframes = 3
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 16)
+target_position = Vector2(0, 24)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(8, 13, 8, 13)
+width = 1.0
+default_color = Color(0.713726, 0.133333, 0.109804, 1)
+gradient = SubResource("Gradient_2foen")
+
+[node name="End" type="Sprite2D" parent="."]
+position = Vector2(8, 32)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bofud6em51pg3"]
+
+[ext_resource type="Script" path="res://nodes/mechanics/movement.gd" id="1_k3cj0"]
+
+[node name="Movement" type="Node2D"]
+script = ExtResource("1_k3cj0")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 24)

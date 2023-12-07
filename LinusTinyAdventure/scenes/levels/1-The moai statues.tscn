@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://du1euggg8754i"]
+
+[ext_resource type="Script" path="res://scenes/levels/Level1.gd" id="1_xxtlx"]
+[ext_resource type="PackedScene" uid="uid://c8eanhf6fduj5" path="res://nodes/characters/player/player.tscn" id="2_m4abo"]
+[ext_resource type="TileSet" uid="uid://bfyqs7dr2cap0" path="res://materials/tilesets/city.tres" id="3_ttunt"]
+[ext_resource type="PackedScene" uid="uid://d10jtsiykf4da" path="res://nodes/items/box/box.tscn" id="4_yolq1"]
+[ext_resource type="PackedScene" uid="uid://chml1iia47al6" path="res://nodes/items/button/button.tscn" id="5_3mfiq"]
+[ext_resource type="PackedScene" uid="uid://c6ywcuu1ss53v" path="res://nodes/items/key/key.tscn" id="6_eniy1"]
+[ext_resource type="PackedScene" uid="uid://bl6084o55t5d0" path="res://nodes/items/door/door.tscn" id="7_nhk5d"]
+[ext_resource type="PackedScene" uid="uid://cdfc2efr3t8wa" path="res://nodes/ui/ui.tscn" id="8_g5o7r"]
+[ext_resource type="PackedScene" uid="uid://bisctldckwds" path="res://nodes/ui/options.tscn" id="9_rno7n"]
+[ext_resource type="PackedScene" uid="uid://b3icbmcj8n8m" path="res://nodes/items/heart/heart.tscn" id="10_y8vxp"]
+[ext_resource type="PackedScene" uid="uid://btf1v8qliqi3g" path="res://nodes/items/radio/radio.tscn" id="11_cxfku"]
+[ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="12_4cnjh"]
+
+[node name="Level1" type="Node2D"]
+position = Vector2(80, -224)
+script = ExtResource("1_xxtlx")
+
+[node name="Player" parent="." instance=ExtResource("2_m4abo")]
+z_index = 1
+position = Vector2(48, 32)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(16, 16)
+tile_set = ExtResource("3_ttunt")
+format = 2
+layer_0/name = "Ground"
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(327679, 0, 0, 262144, 0, 0, 262143, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131071, 0, 0, 65535, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 196614, 0, 0, 196613, 0, 0, 262147, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 589824, 0, 0, 524289, 0, 0, 458753, 0, 0, 458754, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 327686, 0, 0, 327687, 0, 0, 393223, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 524301, 0, 0, 458766, 0, 0, 524302, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 524306, 0, 0, 458770, 0, 0, 393234, 0, 0, 327698, 0, 0, 262162, 0, 0, 196626, 0, 0, 196625, 0, 0, 196624, 0, 0, 196623, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 131086, 0, 0, 14, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, 18, 0, 0, 65554, 0, 0, 131090, 0, 0, -65523, 0, 0, -65524, 0, 0, -65525, 0, 0, -65526, 0, 0, -65527, 0, 0, -65528, 0, 0, 589825, 0, 0, 589827, 0, 0, 589826, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(164, 88)
+zoom = Vector2(2.7, 2.7)
+
+[node name="Box" parent="." instance=ExtResource("4_yolq1")]
+z_index = 1
+position = Vector2(32, 96)
+
+[node name="Box2" parent="." instance=ExtResource("4_yolq1")]
+z_index = 1
+position = Vector2(64, 32)
+
+[node name="Button" parent="." instance=ExtResource("5_3mfiq")]
+position = Vector2(16, 144)
+
+[node name="Button2" parent="." instance=ExtResource("5_3mfiq")]
+position = Vector2(16, 64)
+
+[node name="Key" parent="." instance=ExtResource("6_eniy1")]
+visible = false
+position = Vector2(272, 32)
+
+[node name="Door" parent="." instance=ExtResource("7_nhk5d")]
+position = Vector2(240, 112)
+
+[node name="ui" parent="." instance=ExtResource("8_g5o7r")]
+
+[node name="Options" parent="." instance=ExtResource("9_rno7n")]
+
+[node name="Heart" parent="." instance=ExtResource("10_y8vxp")]
+position = Vector2(280, 120)
+next_level = 2
+
+[node name="Radio" parent="." instance=ExtResource("11_cxfku")]
+position = Vector2(48, 144)
+currentSong = ExtResource("12_4cnjh")
