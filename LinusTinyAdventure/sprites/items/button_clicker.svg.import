@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfdunja50mjin"
-path="res://.godot/imported/radio.png-f6c000b814223770f24069b21a941664.ctex"
+uid="uid://c807eu22e37h3"
+path="res://.godot/imported/button_clicker.svg-b280abae537d8669ee12829328c6ab85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/radio.png"
-dest_files=["res://.godot/imported/radio.png-f6c000b814223770f24069b21a941664.ctex"]
+source_file="res://sprites/items/button_clicker.svg"
+dest_files=["res://.godot/imported/button_clicker.svg-b280abae537d8669ee12829328c6ab85.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

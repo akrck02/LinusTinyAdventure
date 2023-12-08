@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d10jtsiykf4da"]
 
 [ext_resource type="Script" path="res://nodes/items/box/box.gd" id="1_qybvo"]
-[ext_resource type="Texture2D" uid="uid://diklgvdcvwdht" path="res://sprites/items/box.png" id="1_ro0vh"]
+[ext_resource type="Texture2D" uid="uid://cuj2ubya8jgh4" path="res://sprites/items/box.svg" id="2_qr7g5"]
 [ext_resource type="PackedScene" uid="uid://bofud6em51pg3" path="res://nodes/mechanics/movement.tscn" id="3_1t3d3"]
 [ext_resource type="AudioStream" uid="uid://dpiw7b6s2nahv" path="res://sounds/effects/box move.mp3" id="4_ia13k"]
 
@@ -13,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Box:frame")
+tracks/0/path = NodePath("BoxSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +30,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Box:frame")
+tracks/0/path = NodePath("BoxSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,8 +55,8 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_fvbqq")
 debug_color = Color(1, 0.529412, 0.792157, 0.121569)
 
-[node name="Box" type="Sprite2D" parent="."]
-texture = ExtResource("1_ro0vh")
+[node name="BoxSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_qr7g5")
 centered = false
 hframes = 3
 

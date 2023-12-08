@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3icbmcj8n8m"]
 
-[ext_resource type="Texture2D" uid="uid://ds2622t3urhi7" path="res://sprites/items/heart.png" id="1_yrgsr"]
 [ext_resource type="Script" path="res://nodes/items/heart/heart.gd" id="2_17lcs"]
+[ext_resource type="Texture2D" uid="uid://cuhrehe06216f" path="res://sprites/items/heart.svg" id="2_stp33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btski"]
 size = Vector2(14, 12)
@@ -55,7 +55,8 @@ script = ExtResource("2_17lcs")
 shape = SubResource("RectangleShape2D_btski")
 
 [node name="Heart" type="Sprite2D" parent="."]
-texture = ExtResource("1_yrgsr")
+modulate = Color(1, 0.286275, 0.286275, 1)
+texture = ExtResource("2_stp33")
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

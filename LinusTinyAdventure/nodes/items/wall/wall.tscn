@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvycm1lft65xd"]
 
-[ext_resource type="Texture2D" uid="uid://yviiwie7kq23" path="res://sprites/tiles/wall.png" id="1_pg61u"]
+[ext_resource type="Texture2D" uid="uid://bn5bepli4dn7p" path="res://sprites/items/wall.svg" id="1_yi3n3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22bd7"]
 
@@ -8,8 +8,9 @@
 
 [node name="Wall" type="Sprite2D" parent="."]
 scale = Vector2(1, 0.9375)
-texture = ExtResource("1_pg61u")
+texture = ExtResource("1_yi3n3")
 centered = false
+hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true

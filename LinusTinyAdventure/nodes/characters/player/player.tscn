@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8eanhf6fduj5"]
+[gd_scene load_steps=12 format=3 uid="uid://c8eanhf6fduj5"]
 
 [ext_resource type="Texture2D" uid="uid://8710ei328tqx" path="res://sprites/characters/player.png" id="1_agjjh"]
 [ext_resource type="Texture2D" uid="uid://dpif50lovyunx" path="res://sprites/characters/shadow.png" id="1_s87mg"]
 [ext_resource type="Script" path="res://nodes/characters/player/player.gd" id="3_i0gyk"]
 [ext_resource type="Script" path="res://nodes/characters/player/player_animations.gd" id="4_p6cqb"]
+[ext_resource type="Script" path="res://nodes/characters/player/player_sounds.gd" id="5_1nqbq"]
 [ext_resource type="AudioStream" uid="uid://o2sqtb13hy6s" path="res://sounds/effects/impossible.mp3" id="5_vcbn2"]
 [ext_resource type="AudioStream" uid="uid://bwqk01ododre3" path="res://sounds/effects/teleport.mp3" id="6_i6w42"]
 
@@ -70,9 +71,6 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_ul5jc")
 debug_color = Color(0.811765, 0.380392, 0.419608, 0.0980392)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
-current = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8p6h3")
@@ -83,8 +81,14 @@ script = ExtResource("4_p6cqb")
 position = Vector2(8, 8)
 target_position = Vector2(0, 24)
 
-[node name="BlockSound" type="AudioStreamPlayer2D" parent="."]
+[node name="Sounds" type="Node2D" parent="."]
+script = ExtResource("5_1nqbq")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Sounds"]
+current = true
+
+[node name="BlockSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("5_vcbn2")
 
-[node name="TeleportSound" type="AudioStreamPlayer2D" parent="."]
+[node name="TeleportSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("6_i6w42")

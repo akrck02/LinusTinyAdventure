@@ -6,7 +6,7 @@ signal level_change_requested(level : int, transition : bool)
 signal level_changed(level : int)
 signal world_stopped
 signal world_restarted
-signal camera_shake
+signal camera_shake(direction : Direction)
 
 # Savestate signals
 signal new_game_created

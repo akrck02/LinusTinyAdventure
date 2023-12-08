@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dadnks353lcib"
-path="res://.godot/imported/key.png-df6c43435cfaac9d8b94ce74310b3775.ctex"
+uid="uid://cm4yhf1wri3cw"
+path="res://.godot/imported/Laser.svg-f32f931fcc44551bf1cbb73f99a5d930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/key.png"
-dest_files=["res://.godot/imported/key.png-df6c43435cfaac9d8b94ce74310b3775.ctex"]
+source_file="res://sprites/items/Laser.svg"
+dest_files=["res://.godot/imported/Laser.svg-f32f931fcc44551bf1cbb73f99a5d930.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -23,15 +23,7 @@ script = ExtResource("1_4na57")
 z_index = 1
 position = Vector2(64, 64)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
-position = Vector2(-144, -64)
-offset = Vector2(164, 88)
-enabled = false
-zoom = Vector2(2.7, 2.7)
-position_smoothing_enabled = true
-
-[node name="custom_camera" parent="Player" instance=ExtResource("3_vfkin")]
+[node name="CustomCamera" parent="Player" instance=ExtResource("3_vfkin")]
 position = Vector2(8, 9)
 anchor_mode = 1
 zoom = Vector2(2.7, 2.7)

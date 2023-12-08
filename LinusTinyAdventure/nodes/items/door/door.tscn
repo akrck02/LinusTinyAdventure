@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl6084o55t5d0"]
+[gd_scene load_steps=9 format=3 uid="uid://bl6084o55t5d0"]
 
 [ext_resource type="Script" path="res://nodes/items/door/door.gd" id="1_7qtb0"]
-[ext_resource type="Texture2D" uid="uid://dn3ig218g6smd" path="res://sprites/items/door.png" id="1_xancj"]
+[ext_resource type="Texture2D" uid="uid://crriufkl5yoa6" path="res://sprites/items/door.svg" id="2_gmvel"]
 [ext_resource type="AudioStream" uid="uid://cs5cdvwfxbvhd" path="res://sounds/effects/door open.mp3" id="3_psrx0"]
+[ext_resource type="Texture2D" uid="uid://cgga6l6m1vdmo" path="res://sprites/items/door_lock.svg" id="4_ctdt0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eqti"]
 size = Vector2(14, 15)
@@ -12,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("DoorSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +30,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("DoorSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,9 +49,16 @@ _data = {
 [node name="Door" type="CharacterBody2D" groups=["door"]]
 script = ExtResource("1_7qtb0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xancj")
+[node name="DoorSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.6, 0.266667, 1)
+texture = ExtResource("2_gmvel")
 centered = false
+hframes = 3
+
+[node name="DoorLockSprite" type="Sprite2D" parent="."]
+modulate = Color(0.964706, 0.803922, 0, 1)
+position = Vector2(8, 8)
+texture = ExtResource("4_ctdt0")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

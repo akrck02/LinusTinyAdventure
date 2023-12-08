@@ -9,14 +9,16 @@ extends CharacterBody2D
 @onready var tween : Tween
 var moving = false
 
+# Sounds
+@onready var sounds : PlayerSounds = $Sounds
+
 # Step count
 var steps = 0;
 
 # Movement
-@onready var block_sound : AudioStreamPlayer2D = $BlockSound
-@onready var teleport_sound : AudioStreamPlayer2D = $TeleportSound
 const PLAY_MOVE_SOUND_METHOD_NAME : String = "play_move_sound" 
 const MOVEMENT_TWEEN_SPEED : float = 1.00/3.5;
+
 
 # Input handleawait tween.finished
 func _process(_delta):
@@ -90,17 +92,17 @@ func teleport(new_position : Vector2, collider : Node2D, dir : Vector2):
 	await tween.finished
 	
 	if collider == null:
-		teleport_sound.play()
+		sounds.teleport_sound_play_requested.emit()
 		position = new_position
 		return
 	
 	if collider.is_in_group(Groups.MOVABLE) and await collider.move(dir):
 		step()
-		teleport_sound.play()
+		sounds.teleport_sound_play_requested.emit()
 		VibrationManager.vibrate()
 		position = new_position
 		return
 	
-	block_sound.play()
+	sounds.block_sound_play_requested.emit()
 	VibrationManager.vibrate()
 	SignalDatabase.camera_shake.emit()

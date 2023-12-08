@@ -1,10 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm3ee054oenob"]
+[gd_scene load_steps=9 format=3 uid="uid://cm3ee054oenob"]
 
-[ext_resource type="Texture2D" uid="uid://bdy6xapvlq3ki" path="res://sprites/items/teleport.png" id="1_40jei"]
 [ext_resource type="Script" path="res://nodes/items/teleport/teleport.gd" id="1_ah1vq"]
+[ext_resource type="Texture2D" uid="uid://b0uin0a1yceac" path="res://sprites/items/teleport.svg" id="2_2lnvf"]
+[ext_resource type="Texture2D" uid="uid://nbh47581103t" path="res://sprites/items/teleport_frame.svg" id="2_ybiar"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n21ia"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_hnakg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TeleportFrame:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Teleport:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_5rw2r"]
 resource_name = "idle"
@@ -13,7 +41,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("TeleportFrame:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22,20 +50,17 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
-
-[sub_resource type="Animation" id="Animation_hnakg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Teleport:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gxbjm"]
@@ -63,14 +88,21 @@ script = ExtResource("1_ah1vq")
 position = Vector2(8, 8)
 target_position = Vector2(0, -24)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_40jei")
+[node name="Teleport" type="Sprite2D" parent="."]
+modulate = Color(0.803922, 0.647059, 1, 1)
+position = Vector2(8, 8)
+texture = ExtResource("2_2lnvf")
+hframes = 3
+
+[node name="TeleportFrame" type="Sprite2D" parent="."]
+texture = ExtResource("2_ybiar")
 centered = false
 hframes = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 show_behind_parent = true
 visibility_layer = 4
 position = Vector2(8, 8)

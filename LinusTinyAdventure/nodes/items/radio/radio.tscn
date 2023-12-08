@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://btf1v8qliqi3g"]
 
 [ext_resource type="Script" path="res://nodes/items/radio/radio.gd" id="1_aveuo"]
-[ext_resource type="Texture2D" uid="uid://dfdunja50mjin" path="res://sprites/items/radio.png" id="1_s8rqu"]
+[ext_resource type="Texture2D" uid="uid://cy8idyik1ul20" path="res://sprites/items/Radio.svg" id="2_5jbed"]
 
 [sub_resource type="Animation" id="Animation_ng256"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/path = NodePath("RadioSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +25,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/path = NodePath("RadioSprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,8 +47,8 @@ size = Vector2(16, 16)
 [node name="Radio" type="CharacterBody2D"]
 script = ExtResource("1_aveuo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_s8rqu")
+[node name="RadioSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_5jbed")
 centered = false
 hframes = 3
 

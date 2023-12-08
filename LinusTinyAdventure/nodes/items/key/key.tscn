@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6ywcuu1ss53v"]
 
-[ext_resource type="Texture2D" uid="uid://dadnks353lcib" path="res://sprites/items/key.png" id="1_ds66l"]
 [ext_resource type="Script" path="res://nodes/items/key/key.gd" id="1_w1umo"]
+[ext_resource type="Texture2D" uid="uid://dr5qatxr2it1i" path="res://sprites/items/key.svg" id="2_ape6h"]
 [ext_resource type="PackedScene" uid="uid://bofud6em51pg3" path="res://nodes/mechanics/movement.tscn" id="3_on0dk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nbjf"]
@@ -66,8 +66,9 @@ width = 1
 script = ExtResource("1_w1umo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.882353, 0.690196, 0, 1)
 position = Vector2(8, 8)
-texture = ExtResource("1_ds66l")
+texture = ExtResource("2_ape6h")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
