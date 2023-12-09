@@ -49,7 +49,7 @@ func move(dir : Vector2):
 	var collider = ray.get_collider()
 	if EngineUtils.is_in_group(collider,parent.defeat_groups):
 		tween = create_tween()
-		collider.defeat()
+		await collider.defeat()
 		collider.queue_free()
 		
 		if parent.consumable:

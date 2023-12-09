@@ -56,7 +56,9 @@ shape = SubResource("RectangleShape2D_btski")
 
 [node name="Heart" type="Sprite2D" parent="."]
 modulate = Color(1, 0.286275, 0.286275, 1)
+position = Vector2(-8, -8)
 texture = ExtResource("2_stp33")
+centered = false
 hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,41 +1,41 @@
 extends Control
 class_name SoundOptionsUI
 
-@onready var MusicSlider : Slider = $MusicSlider
-@onready var EffectsSlider : Slider = $EffectsSlider
+@onready var music_slider : Slider = $MusicSlider
+@onready var effects_slider : Slider = $EffectsSlider
 
-@onready var MusicPercent : RichTextLabel = $MusicPercent
-@onready var EffectPercent : RichTextLabel = $EffectPercent
-@onready var returnButton : Button = $ReturnButton
+@onready var music_percent : RichTextLabel = $MusicPercent
+@onready var effect_percent : RichTextLabel = $EffectPercent
+@onready var return_button : Button = $ReturnButton
 
 signal hide
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MusicSlider.value_changed.connect(changeMusicPercent);
-	EffectsSlider.value_changed.connect(changeEffectPercent);
-	returnButton.button_down.connect(hideNow)
+	music_slider.value_changed.connect(change_music_percent);
+	effects_slider.value_changed.connect(change_effect_percent);
+	return_button.button_down.connect(hide_now)
 	
-	var musicVolume = OptionsManager.getMusicVolume()* 100;
-	var effectsVolume = OptionsManager.getEffectsVolume()* 100;
+	var music_volume = OptionsManager.get_music_volume()* 100;
+	var effects_volume = OptionsManager.get_effects_volume()* 100;
 	
-	MusicSlider.value = musicVolume;
-	EffectsSlider.value = effectsVolume;
+	music_slider.value = music_volume;
+	effects_slider.value = effects_volume;
 	
-	changeMusicPercent(musicVolume)
-	changeEffectPercent(effectsVolume)
+	change_music_percent(music_volume)
+	change_effect_percent(effects_volume)
 
-func changeMusicPercent(value : float):
-	MusicPercent.text = String("%d" % value)
+func change_music_percent(value : float):
+	music_percent.text = String("%d" % value)
 	SignalDatabase.music_volume_changed.emit(value/100)
 	
 
-func changeEffectPercent(value : float):
-	EffectPercent.text = String("%d" % value)
+func change_effect_percent(value : float):
+	effect_percent.text = String("%d" % value)
 	SignalDatabase.effects_volume_changed.emit(value/100)
 
-func showNow():
-	MusicSlider.grab_focus();
+func show_now():
+	music_slider.grab_focus();
 
-func hideNow():
+func hide_now():
 	hide.emit();

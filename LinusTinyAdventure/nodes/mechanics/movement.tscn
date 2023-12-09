@@ -20,3 +20,4 @@ stream = ExtResource("2_v6xqc")
 
 [node name="TeleportSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("3_08hjc")
+volume_db = -10.0

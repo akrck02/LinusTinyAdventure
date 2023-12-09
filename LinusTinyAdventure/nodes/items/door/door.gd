@@ -11,3 +11,4 @@ func play_open_sound():
 
 func defeat():
 	play_open_sound()
+	await openSound.finished

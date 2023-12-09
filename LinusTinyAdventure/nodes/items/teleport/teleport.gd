@@ -12,6 +12,9 @@ func _ready():
 func _on_area_2d_body_entered(body):
 		
 	var new_position = body.position
+	
+	if not pair:
+		return
 
 	# Right
 	if body.position.x < self.position.x: 

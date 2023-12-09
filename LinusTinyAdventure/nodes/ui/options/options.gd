@@ -10,30 +10,30 @@ enum OPTION_BUTTONS {
 	SOUND = 3
 }
 
-@onready var LevelsButton : Button = $MainOptions/ButtonBar/Levels
-@onready var ControlsButton : Button = $MainOptions/ButtonBar/Controls
-@onready var GraphicsButton : Button = $MainOptions/ButtonBar/Graphics
-@onready var SoundButton : Button = $MainOptions/ButtonBar/Sound
-@onready var ExitButton : Button = $MainOptions/ExitButton
+@onready var levels_button : Button = $MainOptions/ButtonBar/Levels
+@onready var controls_button : Button = $MainOptions/ButtonBar/Controls
+@onready var graphics_button : Button = $MainOptions/ButtonBar/Graphics
+@onready var sound_button : Button = $MainOptions/ButtonBar/Sound
+@onready var exit_button : Button = $MainOptions/ExitButton
 
-@onready var MainOptions = $MainOptions
-@onready var SoundOptions : SoundOptionsUI = $SoundOptions 
-@onready var ControlOptions : ControlsOptionsUI = $ControlsOptions
+@onready var main_options = $MainOptions
+@onready var sound_options : SoundOptionsUI = $SoundOptions 
+@onready var control_options : ControlsOptionsUI = $ControlsOptions
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.hide()
 	SignalDatabase.ui_show_settings.connect(show_self)
-	ExitButton.button_down.connect(hide_all)
-	SoundOptions.hide.connect(show_main);
-	ControlOptions.hide.connect(show_main);
+	exit_button.button_down.connect(hide_all)
+	sound_options.hide.connect(show_main);
+	control_options.hide.connect(show_main);
 	
 	Buttons = []
 	
-	Buttons.insert(OPTION_BUTTONS.LEVELS, LevelsButton)
-	Buttons.insert(OPTION_BUTTONS.CONTROLS, ControlsButton)
-	Buttons.insert(OPTION_BUTTONS.GRAPHICS, GraphicsButton)
-	Buttons.insert(OPTION_BUTTONS.SOUND, SoundButton)
+	Buttons.insert(OPTION_BUTTONS.LEVELS, levels_button)
+	Buttons.insert(OPTION_BUTTONS.CONTROLS, controls_button)
+	Buttons.insert(OPTION_BUTTONS.GRAPHICS, graphics_button)
+	Buttons.insert(OPTION_BUTTONS.SOUND, sound_button)
 	set_buttons();
 
 func show_self(is_showing:bool = true):

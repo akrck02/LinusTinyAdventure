@@ -71,7 +71,7 @@ func set_camera_filter(filter : String):
 	current_options.get("graphics")["camera_effect"] = filter;
 	save_options()
 
-func getMusicVolume() -> float:
+func get_music_volume() -> float:
 	return float(current_options.get("audio")["music"])
 
 func change_music_volume(value : float):
@@ -85,7 +85,7 @@ func change_music_volume(value : float):
 	if isUpdate:
 		save_options()
 
-func getEffectsVolume() -> float:
+func get_effects_volume() -> float:
 	return float(current_options.get("audio")["effects"])
 	
 func change_effects_volume(value : float): 
