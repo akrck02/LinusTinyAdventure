@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bke750yp0plhd" path="res://nodes/ui/options/sound/sound_options.tscn" id="2_aiylp"]
 [ext_resource type="Shader" path="res://shaders/blur/blur.gdshader" id="3_dcjql"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="4_13mb3"]
-[ext_resource type="PackedScene" uid="uid://di8ujnlodowpp" path="res://nodes/ui/options/buttons/optionButton.tscn" id="5_c87vx"]
+[ext_resource type="PackedScene" uid="uid://di8ujnlodowpp" path="res://nodes/ui/options/buttons/option_button.tscn" id="5_c87vx"]
 [ext_resource type="StyleBox" uid="uid://cfhx1hummvka1" path="res://materials/ui/button_default.tres" id="6_fclgq"]
 [ext_resource type="StyleBox" uid="uid://cj7yyf8s2vc5" path="res://materials/ui/button_focus.tres" id="7_lf2w3"]
 [ext_resource type="Texture2D" uid="uid://c4h43uifrswdi" path="res://sprites/ui/option_exit.png" id="8_bv6xm"]

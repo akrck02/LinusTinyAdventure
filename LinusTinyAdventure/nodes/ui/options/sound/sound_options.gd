@@ -8,7 +8,7 @@ class_name SoundOptionsUI
 @onready var effect_percent : RichTextLabel = $EffectPercent
 @onready var return_button : Button = $ReturnButton
 
-signal hide
+signal hide_requested
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,4 +38,4 @@ func show_now():
 	music_slider.grab_focus();
 
 func hide_now():
-	hide.emit();
+	hide_requested.emit();

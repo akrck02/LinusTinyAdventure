@@ -1,7 +1,7 @@
 extends Control
 class_name ControlsOptionsUI
 
-signal hide
+signal hide_requested
 
 @onready var gamepad_controls = $Gamepad
 @onready var keyboard_controls = $Keyboard
@@ -11,10 +11,10 @@ var gamepad;
 
 func show_now():
 	exit_button.pressed.connect(exit)
-	pass
+	exit_button.grab_focus()
 
 func hide_now():
-	hide.emit();
+	hide_requested.emit();
 	
 func _ready():
 	exit_button.grab_focus()
