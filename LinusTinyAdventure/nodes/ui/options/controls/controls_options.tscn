@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dvsl2ffa1ubi2"]
+[gd_scene load_steps=25 format=3 uid="uid://dvsl2ffa1ubi2"]
 
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="1_mipn8"]
 [ext_resource type="Script" path="res://nodes/ui/options/controls/controls_options.gd" id="2_ocnsi"]
@@ -11,11 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://ciqt8q4pf2vc7" path="res://sprites/ui/gamepad_action_button.svg" id="8_b214v"]
 [ext_resource type="Texture2D" uid="uid://u12j8hhvccqk" path="res://sprites/ui/keyboard_space.svg" id="9_doogg"]
 [ext_resource type="Texture2D" uid="uid://b6wgom7h4nlbb" path="res://sprites/ui/gamepad_r1_button_pressed.svg" id="9_l7hdl"]
-[ext_resource type="Texture2D" uid="uid://byu08jynplvyi" path="res://sprites/ui/keyboard_w.svg" id="10_3qtyu"]
-[ext_resource type="Texture2D" uid="uid://8v7bcin0v8g" path="res://sprites/ui/keyboard_s.svg" id="11_e6gw1"]
-[ext_resource type="Texture2D" uid="uid://cbxa3cdca1al1" path="res://sprites/ui/keyboard_a.svg" id="12_ic85a"]
-[ext_resource type="Texture2D" uid="uid://wrubq7i3esss" path="res://sprites/ui/keyboard_d.svg" id="13_pf226"]
+[ext_resource type="Texture2D" uid="uid://dnkbaebytq75l" path="res://sprites/ui/option_keyboard_a_pressed.svg" id="11_lsul0"]
+[ext_resource type="Texture2D" uid="uid://bs7u25mi3d0qu" path="res://sprites/ui/option_keyboard_d_pressed.svg" id="12_1xdlw"]
+[ext_resource type="Texture2D" uid="uid://deii8cxo4ls4k" path="res://sprites/ui/option_keyboard_w_pressed.svg" id="13_lfytx"]
 [ext_resource type="Texture2D" uid="uid://hh6bt6jptj3i" path="res://sprites/ui/keyboard_f5.svg" id="14_3pyfo"]
+[ext_resource type="Texture2D" uid="uid://6jdktam3xnns" path="res://sprites/ui/option_keyboard_s_pressed.svg" id="14_bns1x"]
+[ext_resource type="Texture2D" uid="uid://c0a7081s7c0d" path="res://sprites/ui/option_keyboard_w.svg" id="15_25o6q"]
+[ext_resource type="Texture2D" uid="uid://bxu3d82kwd061" path="res://sprites/ui/option_keyboard_s.svg" id="16_7x4fv"]
+[ext_resource type="Texture2D" uid="uid://b5hdfihanx8ha" path="res://sprites/ui/option_keyboard_a.svg.svg" id="17_0my3t"]
+[ext_resource type="Texture2D" uid="uid://ceyxju0gmh5yf" path="res://sprites/ui/option_keyboard_d.svg" id="18_mjg7l"]
+[ext_resource type="Texture2D" uid="uid://bpwkll8phj5m2" path="res://sprites/ui/keyboard_f5_pressed.svg" id="19_kgwsu"]
+[ext_resource type="Texture2D" uid="uid://bhi1wlq4ylk2t" path="res://sprites/ui/keyboard_space_pressed.svg" id="21_iagnm"]
 
 [sub_resource type="Theme" id="Theme_i6jwy"]
 default_font_size = 8
@@ -92,6 +98,7 @@ bbcode_enabled = true
 text = "[center] Controls "
 
 [node name="Gamepad" type="Node2D" parent="."]
+visible = false
 
 [node name="Controls" type="Node2D" parent="Gamepad"]
 
@@ -310,39 +317,58 @@ text = "[center]INTERACT"
 metadata/_edit_group_ = true
 
 [node name="Keyboard" type="Node2D" parent="."]
+
+[node name="Controls" type="Node2D" parent="Keyboard"]
+
+[node name="Selected" type="Node2D" parent="Keyboard/Controls"]
+
+[node name="LeftSprite" type="Sprite2D" parent="Keyboard/Controls/Selected"]
 visible = false
+position = Vector2(155, 509)
+scale = Vector2(7.25, 7.25)
+texture = ExtResource("11_lsul0")
 
-[node name="ResetSprite" type="Sprite2D" parent="Keyboard"]
-position = Vector2(1026, 353)
-scale = Vector2(8.35835, 8.35835)
-texture = ExtResource("14_3pyfo")
+[node name="RightSprite" type="Sprite2D" parent="Keyboard/Controls/Selected"]
+visible = false
+position = Vector2(373, 510)
+scale = Vector2(6.75, 6.75)
+texture = ExtResource("12_1xdlw")
 
-[node name="InteractSprite" type="Sprite2D" parent="Keyboard"]
-position = Vector2(658, 350)
-scale = Vector2(8.4, 8.4)
-texture = ExtResource("9_doogg")
+[node name="UpSprite" type="Sprite2D" parent="Keyboard/Controls/Selected"]
+visible = false
+position = Vector2(158.25, 344.25)
+scale = Vector2(7.59375, 7.59375)
+texture = ExtResource("13_lfytx")
 
-[node name="UpSprite" type="Sprite2D" parent="Keyboard"]
+[node name="DownSprite" type="Sprite2D" parent="Keyboard/Controls/Selected"]
+visible = false
+position = Vector2(373, 344)
+scale = Vector2(7.875, 7.875)
+texture = ExtResource("14_bns1x")
+
+[node name="Unselected" type="Node2D" parent="Keyboard/Controls"]
+
+[node name="UpSprite" type="Sprite2D" parent="Keyboard/Controls/Unselected"]
 position = Vector2(159, 344)
 scale = Vector2(7.5, 7.5)
-texture = ExtResource("10_3qtyu")
+texture = ExtResource("15_25o6q")
 
-[node name="DownSprite" type="Sprite2D" parent="Keyboard"]
+[node name="DownSprite" type="Sprite2D" parent="Keyboard/Controls/Unselected"]
 position = Vector2(372, 344)
 scale = Vector2(7.83333, 7.83333)
-texture = ExtResource("11_e6gw1")
+texture = ExtResource("16_7x4fv")
 
-[node name="LeftSprite" type="Sprite2D" parent="Keyboard"]
+[node name="LeftSprite" type="Sprite2D" parent="Keyboard/Controls/Unselected"]
 position = Vector2(156, 508)
 scale = Vector2(6.81666, 6.81666)
-texture = ExtResource("12_ic85a")
+texture = ExtResource("17_0my3t")
 
-[node name="RightSprite" type="Sprite2D" parent="Keyboard"]
+[node name="RightSprite" type="Sprite2D" parent="Keyboard/Controls/Unselected"]
 position = Vector2(373, 509)
 scale = Vector2(6.88333, 6.88333)
-texture = ExtResource("13_pf226")
+texture = ExtResource("18_mjg7l")
 
-[node name="Up" type="RichTextLabel" parent="Keyboard"]
+[node name="Up" type="RichTextLabel" parent="Keyboard/Controls"]
 offset_left = 69.0
 offset_top = 247.0
 offset_right = 260.0
@@ -352,7 +378,7 @@ theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "[center]UP"
 
-[node name="Down" type="RichTextLabel" parent="Keyboard"]
+[node name="Down" type="RichTextLabel" parent="Keyboard/Controls"]
 offset_left = 282.0
 offset_top = 245.0
 offset_right = 473.0
@@ -362,7 +388,7 @@ theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "[center]Down"
 
-[node name="Left" type="RichTextLabel" parent="Keyboard"]
+[node name="Left" type="RichTextLabel" parent="Keyboard/Controls"]
 offset_left = 67.0
 offset_top = 417.0
 offset_right = 258.0
@@ -372,7 +398,7 @@ theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "[center]Left"
 
-[node name="Right" type="RichTextLabel" parent="Keyboard"]
+[node name="Right" type="RichTextLabel" parent="Keyboard/Controls"]
 offset_left = 284.0
 offset_top = 417.0
 offset_right = 475.0
@@ -382,7 +408,41 @@ theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "[center]Right"
 
-[node name="Interact" type="RichTextLabel" parent="Keyboard"]
+[node name="ResetLevel" type="Node2D" parent="Keyboard"]
+
+[node name="Selected" type="Node2D" parent="Keyboard/ResetLevel"]
+
+[node name="ResetSprite" type="Sprite2D" parent="Keyboard/ResetLevel/Selected"]
+visible = false
+position = Vector2(1024, 353)
+scale = Vector2(8.625, 8.625)
+texture = ExtResource("19_kgwsu")
+
+[node name="Unselected" type="Node2D" parent="Keyboard/ResetLevel"]
+
+[node name="ResetSprite" type="Sprite2D" parent="Keyboard/ResetLevel/Unselected"]
+position = Vector2(1026, 353)
+scale = Vector2(8.35835, 8.35835)
+texture = ExtResource("14_3pyfo")
+
+[node name="Interaction" type="Node2D" parent="Keyboard"]
+
+[node name="Selected" type="Node2D" parent="Keyboard/Interaction"]
+
+[node name="InteractSprite" type="Sprite2D" parent="Keyboard/Interaction/Selected"]
+visible = false
+position = Vector2(655, 350)
+scale = Vector2(8.65625, 8.65625)
+texture = ExtResource("21_iagnm")
+
+[node name="Unselected" type="Node2D" parent="Keyboard/Interaction"]
+
+[node name="InteractSprite" type="Sprite2D" parent="Keyboard/Interaction/Unselected"]
+position = Vector2(658, 350)
+scale = Vector2(8.4, 8.4)
+texture = ExtResource("9_doogg")
+
+[node name="Interact" type="RichTextLabel" parent="Keyboard/Interaction"]
 offset_left = 535.0
 offset_top = 243.0
 offset_right = 784.0
@@ -392,7 +452,7 @@ theme_override_font_sizes/normal_font_size = 29
 bbcode_enabled = true
 text = "[center]INTERACT"
 
-[node name="Interact2" type="RichTextLabel" parent="Keyboard"]
+[node name="Interact2" type="RichTextLabel" parent="Keyboard/Interaction"]
 offset_left = 866.0
 offset_top = 242.0
 offset_right = 1198.0

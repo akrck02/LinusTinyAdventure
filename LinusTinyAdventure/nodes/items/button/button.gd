@@ -6,6 +6,7 @@ const DISABLE_COLOR : String = "818181"
 
 @onready var animator : AnimationPlayer = $AnimationPlayer
 @onready var button_clicker_sprite : Sprite2D = $ButtonClickerSprite
+@onready var lock_sound = $LockSound
 @export var color = DEFAULT_COLOR
 var active = false;
 var enabled = true;
@@ -33,3 +34,4 @@ func disable_button():
 	button_clicker_sprite.modulate = DISABLE_COLOR
 	animator.play("RESET")
 	enabled = false;
+	lock_sound.play()

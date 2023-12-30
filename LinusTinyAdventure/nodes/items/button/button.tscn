@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://chml1iia47al6"]
+[gd_scene load_steps=10 format=3 uid="uid://chml1iia47al6"]
 
 [ext_resource type="Script" path="res://nodes/items/button/button.gd" id="1_cmlkf"]
 [ext_resource type="Texture2D" uid="uid://2ctm1ng0wxof" path="res://sprites/items/button_base.svg" id="2_je25n"]
 [ext_resource type="Texture2D" uid="uid://c807eu22e37h3" path="res://sprites/items/button_clicker.svg" id="3_koxl2"]
 [ext_resource type="Texture2D" uid="uid://bclb2d0c12ri6" path="res://sprites/items/button_sign.svg" id="4_uhmrw"]
+[ext_resource type="AudioStream" uid="uid://3k2m4g8soljs" path="res://sounds/effects/lock.mp3" id="5_dc40v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iyp28"]
 size = Vector2(14, 13)
@@ -130,6 +131,9 @@ hframes = 3
 libraries = {
 "": SubResource("AnimationLibrary_8yml3")
 }
+
+[node name="LockSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dc40v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
