@@ -6,13 +6,19 @@ const LEVELS_PATH = SCENE_PATH + "levels/"
 const NODE_PATH = "res://nodes/"
 const UI_NODE_PATH = NODE_PATH + "ui/"
 const SPRITE_PATH = "res://sprites/"
+const MATERIAL_PATH = "res://materials/"
+const CAMERA_MATERIAL_PATH = MATERIAL_PATH + "camera/"
 const UI_SPRITE_PATH = SPRITE_PATH + "ui/"
-const SHERD_PATH = "res://shared/"
+const UI_SPRITE_CONTROLS_PATH = UI_SPRITE_PATH + "controls/"
+const UI_SPRITE_GAMEPAD_PATH = UI_SPRITE_CONTROLS_PATH + "gamepad/"
+const UI_SPRITE_KEYBOARD_PATH = UI_SPRITE_CONTROLS_PATH + "keyboard/"
+
+const SHARED_PATH = "res://shared/"
 
 # script paths
 const CONTROLS_SCRIPT_PATH = NODE_PATH + "mechanics/controls.gd"
 const DIRECTION_SCRIPT_PATH = NODE_PATH + "mechanics/direction.gd"
-const ENGINE_UTILS_SCRIPT_PATH = SHERD_PATH + "engine_utils.gd"
+const ENGINE_UTILS_SCRIPT_PATH = SHARED_PATH + "engine_utils.gd"
 
 # Scene paths
 const LOADER_PATH = SCENE_PATH + "loader/loader.tscn"

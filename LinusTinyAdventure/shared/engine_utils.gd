@@ -11,17 +11,6 @@ static func is_player(node : Node) -> bool:
 	
 	return true
 
-# Get if current node is enemy
-static func is_enemy(node : Node) -> bool:
-	
-	if not node.is_in_group("Enemies"):
-		return false
-		
-	if not node.has_method("take_damage"):
-		return false
-	
-	return true
-
 # Get current time 
 static func current_time() -> float:
 	return Time.get_unix_time_from_system();

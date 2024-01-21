@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://nodes/ui/ui.gd" id="1_mg3hq"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="2_gnbsf"]
-[ext_resource type="Texture2D" uid="uid://csaw28lgm3ihr" path="res://sprites/ui/option_keyboard_f5.png" id="3_5plvn"]
+[ext_resource type="Texture2D" uid="uid://cwm1yefk4032d" path="res://sprites/ui/controls/gamepad/reset_level.svg" id="3_wwh02"]
 
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_mg3hq")
@@ -26,5 +26,6 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Reset level"
 
 [node name="ResetLevelIcon" type="Sprite2D" parent="."]
-position = Vector2(1212, 56)
-texture = ExtResource("3_5plvn")
+position = Vector2(1211, 56)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("3_wwh02")

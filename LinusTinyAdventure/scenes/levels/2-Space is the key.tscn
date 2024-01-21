@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3xpqyolufxii"]
+[gd_scene load_steps=13 format=3 uid="uid://b3xpqyolufxii"]
 
 [ext_resource type="TileSet" uid="uid://bfyqs7dr2cap0" path="res://materials/tilesets/city.tres" id="1_gn68j"]
 [ext_resource type="PackedScene" uid="uid://c8eanhf6fduj5" path="res://nodes/characters/player/player.tscn" id="2_c3i7o"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bl6084o55t5d0" path="res://nodes/items/door/door.tscn" id="8_6ysj2"]
 [ext_resource type="PackedScene" uid="uid://b3icbmcj8n8m" path="res://nodes/items/heart/heart.tscn" id="9_wkj6i"]
 [ext_resource type="PackedScene" uid="uid://btf1v8qliqi3g" path="res://nodes/items/radio/radio.tscn" id="10_tba3k"]
+[ext_resource type="PackedScene" uid="uid://dm3luoqc41ive" path="res://nodes/items/camera/camera_filter.tscn" id="12_m6tco"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(80, -224)
@@ -89,3 +90,5 @@ pair = NodePath("../../Teleport8")
 
 [node name="Radio" parent="." instance=ExtResource("10_tba3k")]
 position = Vector2(288, 144)
+
+[node name="CameraFilter" parent="." instance=ExtResource("12_m6tco")]

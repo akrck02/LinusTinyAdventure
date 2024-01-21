@@ -44,15 +44,14 @@ func hide_now():
 	hide_requested.emit();
 	
 func _ready():
-	exit_button.pressed.connect(exit)
+	exit_button.pressed.connect(hide_now)
 
 func _process(_delta):
 	set_input_icons()
 
 func _input(_event):
 	
-	var isGamepad =  Input.get_joy_name(0) != ""	
-	if isGamepad:
+	if ControlManager.is_gamepad_connected():
 		
 		if Input.is_action_just_pressed(Controls.UP):
 			gamepad_up_selected.show()
@@ -88,55 +87,50 @@ func _input(_event):
 		elif Input.is_action_just_released(Controls.RESET_LEVEL):
 			gamepad_reset_selected.hide()
 			gamepad_reset.show()
-	
-	else: 
+		return;
+
+	if Input.is_action_just_pressed(Controls.UP):
+		keyboard_up_selected.show()
+		keyboard_up.hide()
+	elif Input.is_action_just_released(Controls.UP):
+		keyboard_up_selected.hide()
+		keyboard_up.show()
+
+	if Input.is_action_just_pressed(Controls.DOWN):
+		keyboard_down_selected.show()
+		keyboard_down.hide()
+	elif Input.is_action_just_released(Controls.DOWN):
+		keyboard_down_selected.hide()
+		keyboard_down.show()
+
+	if Input.is_action_just_pressed(Controls.LEFT):
+		keyboard_left_selected.show()
+		keyboard_left.hide()
+	elif Input.is_action_just_released(Controls.LEFT):
+		keyboard_left_selected.hide()
+		keyboard_left.show()
 		
-		if Input.is_action_just_pressed(Controls.UP):
-			keyboard_up_selected.show()
-			keyboard_up.hide()
-		elif Input.is_action_just_released(Controls.UP):
-			keyboard_up_selected.hide()
-			keyboard_up.show()
-
-		if Input.is_action_just_pressed(Controls.DOWN):
-			keyboard_down_selected.show()
-			keyboard_down.hide()
-		elif Input.is_action_just_released(Controls.DOWN):
-			keyboard_down_selected.hide()
-			keyboard_down.show()
-
-		if Input.is_action_just_pressed(Controls.LEFT):
-			keyboard_left_selected.show()
-			keyboard_left.hide()
-		elif Input.is_action_just_released(Controls.LEFT):
-			keyboard_left_selected.hide()
-			keyboard_left.show()
-			
-		if Input.is_action_just_pressed(Controls.RIGHT):
-			keyboard_right_selected.show()
-			keyboard_right.hide()
-		elif Input.is_action_just_released(Controls.RIGHT):
-			keyboard_right_selected.hide()
-			keyboard_right.show()
-			
-		if Input.is_action_just_pressed(Controls.RESET_LEVEL):
-			keyboard_reset_selected.show()
-			keyboard_reset.hide()
-		elif Input.is_action_just_released(Controls.RESET_LEVEL):
-			keyboard_reset_selected.hide()
-			keyboard_reset.show()
+	if Input.is_action_just_pressed(Controls.RIGHT):
+		keyboard_right_selected.show()
+		keyboard_right.hide()
+	elif Input.is_action_just_released(Controls.RIGHT):
+		keyboard_right_selected.hide()
+		keyboard_right.show()
+		
+	if Input.is_action_just_pressed(Controls.RESET_LEVEL):
+		keyboard_reset_selected.show()
+		keyboard_reset.hide()
+	elif Input.is_action_just_released(Controls.RESET_LEVEL):
+		keyboard_reset_selected.hide()
+		keyboard_reset.show()
 
 func set_input_icons():
-	gamepad = Input.get_joy_name(0)
-		
-	if gamepad == "":
-		gamepad_controls.hide()
-		keyboard_controls.show()
-	else: 
+	
+	if ControlManager.is_gamepad_connected():
 		keyboard_controls.hide()
 		gamepad_controls.show()
-
-
-func exit():
-	hide_now()
+		return
+		
+	gamepad_controls.hide()
+	keyboard_controls.show()
 

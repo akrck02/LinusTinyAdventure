@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://du1euggg8754i"]
+[gd_scene load_steps=16 format=3 uid="uid://du1euggg8754i"]
 
 [ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_xxtlx"]
 [ext_resource type="PackedScene" uid="uid://c8eanhf6fduj5" path="res://nodes/characters/player/player.tscn" id="2_m4abo"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://btf1v8qliqi3g" path="res://nodes/items/radio/radio.tscn" id="11_cxfku"]
 [ext_resource type="AudioStream" uid="uid://coxdkaytrkx70" path="res://sounds/OST/Level1.mp3" id="12_2mqub"]
 [ext_resource type="PackedScene" uid="uid://cvycm1lft65xd" path="res://nodes/items/wall/wall.tscn" id="14_nyi3w"]
+[ext_resource type="PackedScene" uid="uid://dm3luoqc41ive" path="res://nodes/items/camera/camera_filter.tscn" id="15_fnfn8"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(80, -224)
@@ -69,3 +70,5 @@ position = Vector2(272, 32)
 
 [node name="BreakeableWall" parent="." instance=ExtResource("14_nyi3w")]
 position = Vector2(240, 32)
+
+[node name="CameraFilter" parent="." instance=ExtResource("15_fnfn8")]

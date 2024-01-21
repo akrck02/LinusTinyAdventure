@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://dnv6mar7lxn38" path="res://materials/options/option_button.tres" id="2_vmqrq"]
 [ext_resource type="StyleBox" uid="uid://cgjm7qs4ijppb" path="res://materials/options/option_button_press.tres" id="3_idxcl"]
 [ext_resource type="Script" path="res://nodes/ui/options/buttons/option_button.gd" id="4_7tjmb"]
-[ext_resource type="Texture2D" uid="uid://csaw28lgm3ihr" path="res://sprites/ui/option_keyboard_f5.png" id="5_g1yjj"]
+[ext_resource type="Texture2D" uid="uid://c3am6jd2ryfv8" path="res://sprites/ui/levels.svg" id="5_lmekc"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="6_wus8p"]
 
 [sub_resource type="Theme" id="Theme_2ubyt"]
@@ -34,12 +34,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_mhtjc")
 action_mode = 0
 script = ExtResource("4_7tjmb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(114, 77.5)
-scale = Vector2(2.22222, 2.24444)
-texture = ExtResource("5_g1yjj")
+[node name="ButtonSprite2D" type="Sprite2D" parent="."]
+position = Vector2(112, 64)
+scale = Vector2(0.59111, 0.57222)
+texture = ExtResource("5_lmekc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="ButtonLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 123.0
@@ -48,7 +48,4 @@ offset_bottom = 163.0
 theme = ExtResource("6_wus8p")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center] Button label"
-
-[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
-[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+text = "[center] LEVELS"

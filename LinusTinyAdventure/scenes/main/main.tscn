@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvtx2c1ekdn5x"]
+[gd_scene load_steps=5 format=3 uid="uid://cvtx2c1ekdn5x"]
 
 [ext_resource type="Texture2D" uid="uid://drysb058or8cj" path="res://sprites/background/logo.png" id="1_5goyq"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_8o6y1"]
 [ext_resource type="Theme" uid="uid://ea3c2pcwief3" path="res://materials/ui/default_theme.tres" id="3_8sbms"]
+[ext_resource type="PackedScene" uid="uid://dm3luoqc41ive" path="res://nodes/items/camera/camera_filter.tscn" id="4_qwkry"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8o6y1")
@@ -27,3 +28,5 @@ theme = ExtResource("3_8sbms")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 text = "[center] press start"
+
+[node name="CameraFilter" parent="." instance=ExtResource("4_qwkry")]

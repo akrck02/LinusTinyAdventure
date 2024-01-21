@@ -21,9 +21,9 @@ func _process(_delta):
 			
 
 func set_input_icons():
-	gamepad = Input.get_joy_name(0)
+
+	if ControlManager.is_gamepad_connected():
+		ResetLevelIcon.texture = load(Constants.UI_SPRITE_GAMEPAD_PATH + Icons.gamepad_reset)
+		return 
 		
-	if gamepad == "":
-		ResetLevelIcon.texture = load(Constants.UI_SPRITE_PATH + "option_keyboard_f5.png")
-	else: 
-		ResetLevelIcon.texture = load(Constants.UI_SPRITE_PATH + "option_gamepad_r1.png")
+	ResetLevelIcon.texture = load(Constants.UI_SPRITE_KEYBOARD_PATH + Icons.keyboard_reset)

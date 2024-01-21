@@ -6,6 +6,7 @@ var current_options :  Dictionary;
 func _ready():
 	SignalDatabase.music_volume_changed.connect(change_music_volume)
 	SignalDatabase.effects_volume_changed.connect(change_effects_volume)
+	SignalDatabase.ui_camera_filter_changed.connect(set_camera_filter)
 	
 	load_options()
 
@@ -30,7 +31,6 @@ func load_options() -> Dictionary:
 	else:
 		## Load error scene
 		print("JSON Parse Error: ", json.get_error_message(), " in ", save_game_file, " at line ", json.get_error_line())
-		EngineUtils.load_scene(self,Constants.ERROR_SCENE_NAME)
 	
 	return current_options;
 
@@ -47,10 +47,12 @@ func default_options() -> Dictionary :
 		"general": {
 			"vibration" : "true"
 		},
-		"graphics":{},
+		"graphics":{
+			"filter" : CameraEffects.GRAINY
+		},
 		"audio" : {
-			"music" : "100",
-			"effects" : "100"
+			"music" : "0.5",
+			"effects" : "0.5"
 		}	
 	}
 
@@ -64,11 +66,11 @@ func toggle_vibration():
 
 
 func get_camera_filter() ->String :
-	return current_options.get("graphics")["camera_effect"];
+	return current_options.get("graphics")["filter"];
 
 
 func set_camera_filter(filter : String):
-	current_options.get("graphics")["camera_effect"] = filter;
+	current_options.get("graphics")["filter"] = filter;
 	save_options()
 
 func get_music_volume() -> float:

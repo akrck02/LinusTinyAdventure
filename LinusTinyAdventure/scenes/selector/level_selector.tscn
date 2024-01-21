@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsuqtnm2bfhok"]
+[gd_scene load_steps=5 format=3 uid="uid://bsuqtnm2bfhok"]
 
 [ext_resource type="Script" path="res://scenes/selector/level_selector.gd" id="1_i878k"]
 [ext_resource type="FontFile" uid="uid://846l31wlf0as" path="res://fonts/Early GameBoy.ttf" id="2_63qra"]
 [ext_resource type="Script" path="res://shared/camera_movements.gd" id="2_g365e"]
+[ext_resource type="PackedScene" uid="uid://dm3luoqc41ive" path="res://nodes/items/camera/camera_filter.tscn" id="4_b7xtt"]
 
 [node name="LevelSelector" type="Node2D"]
 script = ExtResource("1_i878k")
@@ -45,3 +46,5 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_fonts/normal_font = ExtResource("2_63qra")
 theme_override_font_sizes/normal_font_size = 15
 text_direction = 2
+
+[node name="CameraFilter" parent="." instance=ExtResource("4_b7xtt")]

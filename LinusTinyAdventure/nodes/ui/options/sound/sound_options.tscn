@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dsascs78fvib8" path="res://sprites/ui/slider_grab_selected.png" id="4_5wfdv"]
 [ext_resource type="StyleBox" uid="uid://cfhx1hummvka1" path="res://materials/ui/button_default.tres" id="5_k75gh"]
 [ext_resource type="StyleBox" uid="uid://cj7yyf8s2vc5" path="res://materials/ui/button_focus.tres" id="6_6k0xb"]
-[ext_resource type="Texture2D" uid="uid://500ttx0e2bl0" path="res://sprites/ui/sound.png" id="6_qkwwq"]
 [ext_resource type="Texture2D" uid="uid://tc5o5aa4nu2r" path="res://sprites/ui/music.png" id="7_n43rg"]
 [ext_resource type="Texture2D" uid="uid://c4h43uifrswdi" path="res://sprites/ui/option_exit.png" id="7_pj2y1"]
+[ext_resource type="Texture2D" uid="uid://bv6f5mhmjtq21" path="res://sprites/ui/sound.svg" id="9_rrmfn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5k20"]
 bg_color = Color(1, 1, 1, 0.607843)
@@ -164,9 +164,9 @@ scale = Vector2(0.961111, 0.961111)
 texture = ExtResource("7_pj2y1")
 
 [node name="Sound" type="Sprite2D" parent="."]
-position = Vector2(768, 372)
-scale = Vector2(0.246032, 0.246032)
-texture = ExtResource("6_qkwwq")
+position = Vector2(769.226, 373.226)
+scale = Vector2(0.229682, 0.229682)
+texture = ExtResource("9_rrmfn")
 
 [node name="Music" type="Sprite2D" parent="."]
 position = Vector2(768, 278)
